@@ -9,11 +9,10 @@ export interface TaskState {
 
 export interface TaskAction {
   type: TaskActionType;
-  payload?: Task[] | undefined;
-  error: string | undefined;
+  payload?: any;
 }
 
-const initialState: TaskState = {
+export const initialState: TaskState = {
   tasks: [],
   isLoading: false,
   error: undefined,
@@ -40,7 +39,7 @@ const taskReducer = (
     case TaskActionType.LoadTaskFailed:
       return {
         ...state,
-        error: action.error,
+        error: action.payload,
         isLoading: false,
       };
 
