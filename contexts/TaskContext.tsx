@@ -1,5 +1,4 @@
 import React, { createContext, PropsWithChildren, useReducer, useState } from 'react';
-import { Task } from '../entities/Task';
 import taskReducer, { initialState, TaskState } from '../reducers/taskReducer';
 
 export type TaskProviderProps = PropsWithChildren<{}>
