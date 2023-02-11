@@ -1,5 +1,5 @@
 import React, { createContext, PropsWithChildren, useState } from 'react';
-import { Task } from '../entities/task';
+import { Task } from '../entities/Task';
 
 export type TaskProviderProps = PropsWithChildren<{}>
 
