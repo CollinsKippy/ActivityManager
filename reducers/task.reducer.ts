@@ -1,5 +1,5 @@
 import {Task} from '../entities/Task';
-import {TaskActionType} from './TaskActionType';
+import {TaskActionType} from './task.actions';
 
 export interface TaskState {
   tasks: Task[] | undefined;
