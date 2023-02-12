@@ -13,7 +13,10 @@ export interface TaskAction {
 }
 
 export const initialState: TaskState = {
-  tasks: [],
+  tasks: [
+    {id: 1, name: 'Buy Milk', isCompleted: false},
+    {id: 2, name: 'Exercise', isCompleted: false},
+  ],
   isLoading: false,
   error: undefined,
 };

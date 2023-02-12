@@ -17,6 +17,9 @@ import {
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
+import TaskList from './components/task-list';
+import Title from './components/title';
+import { TaskProvider } from './contexts/task.context';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,17 +29,21 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+    <TaskProvider>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={backgroundStyle}>
+          <Title />
+          <TaskList />
+        </ScrollView>
+      </SafeAreaView>
+    </TaskProvider>
 
-      </ScrollView>
-    </SafeAreaView>
   );
 }
 
